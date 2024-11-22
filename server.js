@@ -8,11 +8,11 @@ app.use(cors());
 app.get('/api/surveys', async (req, res) => {
   try {
     const response = await axios.get(
-      'https://surveysupplysandbox.zamplia.com/api/v1/Surveys/GetAllocatedSurveys',
+      'https://surveysupply.zamplia.com/api/v1/Surveys/GetAllocatedSurveys',
       {
         headers: {
           Accept: 'application/json',
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
         },
       }
     );
@@ -24,9 +24,9 @@ app.get('/api/surveys', async (req, res) => {
 
 app.get('/api/languages', async (req, res) => {
     try {
-      const response = await axios.get('https://surveysupplysandbox.zamplia.com/api/v1/Attributes/GetLanguages', {
+      const response = await axios.get('https://surveysupply.zamplia.com/api/v1/Attributes/GetLanguages', {
         headers: {
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
           Accept: 'application/json',
         },
       });
@@ -39,9 +39,9 @@ app.get('/api/languages', async (req, res) => {
   
   app.get('/api/industry', async (req, res) => {
     try {
-      const response = await axios.get('https://surveysupplysandbox.zamplia.com/api/v1/Attributes/GetIndustry', {
+      const response = await axios.get('https://surveysupply.zamplia.com/api/v1/Attributes/GetIndustry', {
         headers: {
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
           Accept: 'application/json',
         },
       });
@@ -55,10 +55,10 @@ app.get('/api/languages', async (req, res) => {
   app.get('/api/stats/', async (req, res) => {
     try {
       let survey_id = req.query.survey_id
-      let url = `https://surveysupplysandbox.zamplia.com/api/v1//Surveys/getProjectGlobalstats?SurveyId=${survey_id}`
+      let url = `https://surveysupply.zamplia.com/api/v1//Surveys/getProjectGlobalstats?SurveyId=${survey_id}`
       const response = await axios.get(url, {
         headers: {
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
           Accept: 'application/json',
         },
       });
@@ -72,10 +72,10 @@ app.get('/api/languages', async (req, res) => {
   app.get('/api/qualification', async (req, res) => {
     try {
       let survey_id = req.query.survey_id
-      let url = `https://surveysupplysandbox.zamplia.com/api/v1//Surveys/GetSurveyQualifications?SurveyId=${survey_id}`
+      let url = `https://surveysupply.zamplia.com/api/v1//Surveys/GetSurveyQualifications?SurveyId=${survey_id}`
       const response = await axios.get(url, {
         headers: {
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
           Accept: 'application/json',
         },
       });
@@ -89,10 +89,10 @@ app.get('/api/languages', async (req, res) => {
   app.get('/api/demographic', async (req, res) => {
     try {
       let LanguageId = req.query.LanguageId
-      let url = `https://surveysupplysandbox.zamplia.com/api/v1//Attributes/GetDemoGraphics?LanguageId=${LanguageId}`
+      let url = `https://surveysupply.zamplia.com/api/v1//Attributes/GetDemoGraphics?LanguageId=${LanguageId}`
       const response = await axios.get(url, {
         headers: {
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
           Accept: 'application/json',
         },
       });
@@ -106,10 +106,10 @@ app.get('/api/languages', async (req, res) => {
   app.get('/api/quota', async (req, res) => {
     try {
       let survey_id = req.query.survey_id
-      let url = `https://surveysupplysandbox.zamplia.com/api/v1//Surveys/GetSurveyQuotas?SurveyId=${survey_id}`
+      let url = `https://surveysupply.zamplia.com/api/v1//Surveys/GetSurveyQuotas?SurveyId=${survey_id}`
       const response = await axios.get(url, {
         headers: {
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
           Accept: 'application/json',
         },
       });
@@ -126,11 +126,11 @@ app.get('/api/languages', async (req, res) => {
       let IpAddress = req.query.IpAddress
       let TransactionId = req.query.TransactionId
       console.log(IpAddress)
-      let url = `https://surveysupplysandbox.zamplia.com/api/v1/Surveys/GenerateLink?SurveyId=${survey_id}&IpAddress=${IpAddress}&TransactionId=${TransactionId}`
+      let url = `https://surveysupply.zamplia.com/api/v1/Surveys/GenerateLink?SurveyId=${survey_id}&IpAddress=${IpAddress}&TransactionId=${TransactionId}`
       console.log("url ==> ", url)
       const response = await axios.get(url, {
         headers: {
-          'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          'ZAMP-KEY': 'bAkKOl33USbjy2hiI2Le4DH3vNSqC9vx',
           Accept: 'application/json',
         },
       });
